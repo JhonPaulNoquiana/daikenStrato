@@ -33,7 +33,7 @@ button, input { font: inherit; }
 .finale input::placeholder { color: rgb(255 255 255 / .58); }
 .finale button { display: grid; place-items: center; width: 46px; height: 46px; border: 1px solid rgb(255 255 255 / .55); border-radius: 50%; background: rgb(255 255 255 / .08); color: white; cursor: pointer; transition: background .25s, color .25s, transform .25s; }
 .finale button:hover, .finale button:focus-visible { background: white; color: #172024; transform: rotate(-5deg); outline: none; }
-.confirmation { border-left: 1px solid #b9e8f4; padding: 3px 0 4px 22px; }.confirmation span { display: block; margin-bottom: 8px; font-size: 8px; letter-spacing: .3em; }.confirmation strong { font-family: var(--font-serif-custom), serif; font-size: clamp(30px, 4vw, 54px); font-weight: 400; line-height: .95; }
+.confirmation { border-left: 1px solid #b9e8f4; padding: 3px 0 4px 22px; }.confirmation span { display: block; margin-bottom: 8px; font-size: 8px; letter-spacing: .3em; }.confirmation strong { display: block; font-family: var(--font-serif-custom), serif; font-size: clamp(30px, 4vw, 54px); font-weight: 400; line-height: .95; }.confirmation a { display: inline-block; color: #c5f2fa; font-size: 11px; margin-top: 18px; text-underline-offset: 4px; }
 footer { position: absolute; z-index: 5; left: 42px; right: 43px; bottom: 25px; display: flex; justify-content: space-between; font-size: 7px; text-transform: uppercase; letter-spacing: .22em; opacity: .62; }
 @keyframes breathe { 50% { transform: translateY(6px); opacity: .5; } }
 @media (max-width: 700px) {

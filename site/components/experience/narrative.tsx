@@ -14,6 +14,7 @@ export function Narrative() {
   const [progress, setProgress] = useState(0);
   const [roomSize, setRoomSize] = useState('');
   const [sent, setSent] = useState(false);
+  const [draftUrl, setDraftUrl] = useState('mailto:admin@stratobuilders.ph');
   useEffect(() => {
     const onProgress = (event: Event) => setProgress((event as CustomEvent<number>).detail);
     addEventListener('cinematic-progress', onProgress);
@@ -21,7 +22,14 @@ export function Narrative() {
   }, []);
   const submit = (event: FormEvent) => {
     event.preventDefault();
-    if (roomSize.trim()) setSent(true);
+    const size = roomSize.trim();
+    if (!size) return;
+    const subject = encodeURIComponent(`Cooling advice for ${size}`);
+    const body = encodeURIComponent(`Hello Strato Builders,\n\nI would like Daikin cooling advice for a space of ${size}.\n\nMy name:\nMy location:\nMy contact number:`);
+    const url = `mailto:admin@stratobuilders.ph?subject=${subject}&body=${body}`;
+    setDraftUrl(url);
+    window.location.href = url;
+    setSent(true);
   };
   return (
     <>
@@ -42,7 +50,7 @@ export function Narrative() {
       <section className="finale" style={{ opacity: Math.max(0, (progress - .84) / .12), pointerEvents: progress > .9 ? 'auto' : 'none' }} aria-hidden={progress < .86}>
         <p>Find the right cooling for your space</p>
         {sent ? (
-          <div className="confirmation"><span>SPACE RECEIVED</span><strong>We’ll map the perfect climate for {roomSize}.</strong></div>
+          <div className="confirmation"><span>EMAIL DRAFT READY</span><strong>Send your message to request cooling advice for {roomSize}.</strong><a href={draftUrl}>Open email again</a></div>
         ) : (
           <form onSubmit={submit}>
             <label htmlFor="room-size">Tell us your room size</label>

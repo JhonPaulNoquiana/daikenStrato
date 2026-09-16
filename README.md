@@ -10,4 +10,4 @@ This workspace keeps the deployable website separate from source material and pa
 | `archives/deployments/` | Earlier deployment packages |
 | `archives/previews/` | Earlier generated preview images |
 
-Work on and deploy the website from `site/`. The `archives/` files are historical copies; they are not used by the running site.
+Work on and deploy the website from `site/`. The `archives/` files are historical copies; they are not used by the running site. For Render, follow the [manual deployment guide](site/docs/render-deployment.md).

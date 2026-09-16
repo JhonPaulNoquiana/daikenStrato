@@ -3,12 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=22.13.0"
+    "node": ">=22.13.0 <25"
   },
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",
+    "build:render": "node scripts/render-build.mjs",
     "lint": "oxlint",
     "format": "oxfmt"
   },
@@ -24,6 +25,7 @@
     "gsap": "^3.15.0",
     "input-otp": "1.4.2",
     "lucide-react": "1.31.0",
+    "next": "^16.3.5",
     "react": "19.2.6",
     "react-day-picker": "9.8.1",
     "react-dom": "19.2.6",

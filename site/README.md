@@ -1,6 +1,6 @@
 # Daikin × Strato Builders website
 
-The site is a Vinext/React application hosted on Sites.
+The site has a Vinext build for Sites and a static Next.js export for Render.
 
 | Path | Purpose |
 | --- | --- |
@@ -16,6 +16,8 @@ The site is a Vinext/React application hosted on Sites.
 | `tests/` | Pointer, touch, and feature navigation checks |
 
 Run `npm install` and `npm run dev` for local development. Run `npm run build` before publishing.
+
+For manual Render setup, see [docs/render-deployment.md](docs/render-deployment.md). Run `npm run build:render` to produce the `out/` folder for a Render Static Site.
 
 Run `node --test tests/rotation.test.mjs` with Node 24 to check hover mapping, swipe limits, and feature navigation.
 

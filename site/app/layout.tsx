@@ -6,7 +6,7 @@ const sans = Manrope({ variable: '--font-sans-custom', subsets: ['latin'] });
 const serif = Cormorant_Garamond({ variable: '--font-serif-custom', subsets: ['latin'], weight: ['400', '500'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://daikin-strato-builders-opc.yukinowatashiwa.chatgpt.site'),
+  metadataBase: new URL(process.env.SITE_URL || process.env.RENDER_EXTERNAL_URL || 'https://daikin-strato-builders-opc.yukinowatashiwa.chatgpt.site'),
   title: 'Daikin × Strato Builders OPC — More Cooling for Bigger Spaces',
   description: 'Professional Daikin air-conditioning systems, installation, and service from Strato Builders OPC.',
   openGraph: {

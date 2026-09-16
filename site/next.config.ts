@@ -1,5 +1,9 @@
 import type { NextConfig } from 'next';
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  ...(process.env.RENDER_STATIC_BUILD === '1'
+    ? { output: 'export' as const, images: { unoptimized: true } }
+    : {}),
+};
 
 export default nextConfig;
